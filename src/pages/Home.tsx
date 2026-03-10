@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import ProductCard from "../components/ProductCard";
 import { products } from "../data/products";
 
@@ -37,9 +38,9 @@ export default function Home() {
               Ver productos
             </a>
 
-            <a href="/cart" style={styles.secondaryButton}>
+            <Link to="/cart" style={styles.secondaryButton}>
               Ir al carrito
-            </a>
+            </Link>
           </div>
         </div>
 
@@ -89,6 +90,9 @@ export default function Home() {
           <button style={styles.filterButton} onClick={() => setCategory("creatina")}>
             Creatinas
           </button>
+          <button style={styles.filterButton} onClick={() => setCategory("pre-entreno")}>
+            Pre entreno
+          </button>
           <button style={styles.filterButton} onClick={() => setCategory("accesorio")}>
             Accesorios
           </button>
@@ -108,7 +112,6 @@ export default function Home() {
       <footer style={styles.footer}>
         © 2026 GAP Nutrition · Desarrollado por Gonzalo Oyarzún
       </footer>
-
     </main>
   );
 }
